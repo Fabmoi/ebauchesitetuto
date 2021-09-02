@@ -33,11 +33,15 @@ div.tuto {                                                      /* BLOCS TUTOS *
     height: 275px;
     margin: 10px auto;
     padding-left: 3px;
+    position: relative;
     border: double 1px black;
 }
 p.title-language {                                              /* BLOC PAR LANGAGE */
     text-align: center;
     font-weight: bold
 }
-
+button.see-tuto {
+    position: absolute;
+    bottom: 10px;
+}
 
