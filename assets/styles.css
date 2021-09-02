@@ -1,0 +1,43 @@
+
+body {                                                          /* CORPS DU SITE */
+    background: url("../img/herbe.jpg") fixed;
+    background-size: contain;
+}
+div.all-btn-nav {                                               /* BARRE NAVIGATION AVEC TOUS SES BOUTONS */
+    padding: 7px;
+    margin-bottom: 10px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+}
+button.btn-nav {                                                /* BOUTONS BARRE NAVIGATION */
+    margin: 0 5px;
+    font-weight: bold;
+}
+div.all-desc-site {                                             /* BLOC DE DESCRIPTION DU SITE */
+    margin: 5px auto;
+    width: 55%;
+    background-color: rgba(135, 206, 235, 0.5);
+    border: solid 1px black;
+}
+h1.title-desc-site {                                            /* TITRE DESCRIPTION DU SITE */
+    text-align: center;
+}
+div.zone-tuto {                                                 /* BLOC DES TUTOS PAR LANGAGE */
+    display: flex;
+    flex-flow: row wrap;
+    border: solid 1px black;
+}
+div.tuto {                                                      /* BLOCS TUTOS */
+    width: 275px;
+    height: 275px;
+    margin: 10px auto;
+    padding-left: 3px;
+    border: double 1px black;
+}
+p.title-language {                                              /* BLOC PAR LANGAGE */
+    text-align: center;
+    font-weight: bold
+}
+
+
