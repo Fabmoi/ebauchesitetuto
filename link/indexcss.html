@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/stylesindexlangage.css">
+    <script type="text/javascript" src="../assets/js/ariatabs.js" type="module" Defer></script>
+    <title>Mes tutoriels CSS</title>
+</head>
+<body>
+<header>   
+    <div>
+        <button class="styled-btn-welcome"><a href="../index.html">Retourner sur la page d'accueil</a></button>
+    </div>
+    <p class="header-desc-index-tuto">Ici, je vais présenter mes tutoriels en CSS (Cliquez sur les onglets à gauche pour voir le tutoriel correspondant</p>
+</header>
+
+    <section class="index-category-system-tabs">                                    <!-- TUTORIELS -->
+        <nav-tabs class="index-category-nav-tabs" id="tuto">                        <!-- ONGLETS -->                   
+            <a href="#tuto-1" aria-selected="true">Reset CSS</a>
+            <a href="#tuto-2">Fenêtre modale seulement en CSS</a>
+            <a href="#tuto-3">Présentation tutoriel 3</a>
+            <a href="#tuto-4">Présentation tutoriel 4</a>
+            <a href="#tuto-5">Présentation tutoriel 5</a>
+            <a href="#tuto-6">Présentation tutoriel 6</a>
+        </nav-tabs>
+    
+        <div class="index-category-tab-content" id="tuto-1">                        <!-- RESET CSS -->
+            <div class="title-tuto">RESET CSS
+            </div><br>
+                <div class="code-tuto">
+                        html, body, div, span, applet, object, iframe, <br>
+                        h1, h2, h3, h4, h5, h6, p, blockquote, pre, <br>
+                        a, abbr, acronym, address, big, cite, code, <br>
+                        del, dfn, em, img, ins, kbd, q, s, samp, <br>
+                        small, strike, strong, sub, sup, tt, var, <br>
+                        b, u, i, center, <br>
+                        dl, dt, dd, ol, ul, li, <br>
+                        fieldset, form, label, legend, <br>
+                        table, caption, tbody, tfoot, thead, tr, th, td, <br>
+                        article, aside, canvas, details, embed, <br>
+                        figure, figcaption, footer, header, hgroup, <br>
+                        menu, nav, output, ruby, section, summary, <br>
+                        time, mark, audio, video { <br>
+                        margin: 0; <br>
+                        padding: 0; <br>
+                        border: 0; <br>
+                        font-size: 100%; <br>
+                        font: inherit; <br>
+                        vertical-align: baseline; <br>
+                        } <br>
+                        article, aside, details, figcaption, figure, <br>
+                        footer, header, hgroup, menu, nav, section { <br>
+                        display: block; <br>
+                        } <br>
+                        body { <br>
+                        line-height: 1; <br>
+                        } <br>
+                        ol, ul { <br>
+                        list-style: none; <br>
+                        } <br>
+                        blockquote, q { <br>
+                        quotes: none; <br>
+                        } <br>
+                        blockquote:before, blockquote:after, <br>
+                        q:before, q:after { <br>
+                        content: ' '; <br>
+                        content: none; <br>
+                        } <br>
+                        table { <br>
+                        border-collapse: collapse; <br>
+                        border-spacing: 0; <br>
+                        }
+                </div>
+                <div class="desc-tuto">
+                    Je l'utilise toujours pour chaque projet afin de pouvoir travailler mon CSS comme je le désire. <br>
+                    Il va me servir à partir sur une base de travail neutre pour chaque navigateur et en effaçant les différences d'affichage par défaut des différents navigateurs. <br>
+                    Il suffit de le copier tel quel au début de la feuille de styles.
+                </div>
+        </div>
+
+        <div class="index-category-tab-content" id="tuto-2" hidden="hidden">        <!-- FENÊTRE MODALE CSS ONLY -->      
+            <div class="title-tuto">Fenêtre modale seulement en CSS
+            </div><br>
+                <div class="code-tuto"> 
+                   
+                        &lth2&gtCréation d'une Boîte Modale seulement en CSS&lt/h2&gt <br>
+                        &ltdiv class="modal-link"&gt&lta href="#modal-open"&gtCliquer pour ouvrir la Boîte Modale&lt/a&gt&lt/div&gt <br>
+                        &ltdiv id="modal-open" class="modal-window"&gt <br>
+                          &ltdiv class="modal-window-open"&gt <br>
+                            &lta href="#modal-close" class="modal-close"&gtX&lt/a&gt <br>
+                            &lth2&gtBoîte Modale&lt/h2&gt <br>
+                            &ltp&gtBoîte Modale faite uniquement en CSS.&lt/p&gt <br>
+                            &ltp&gtAppuyer sur la croix pour fermer.&lt/p&gt <br>
+                          &lt/div&gt <br>
+                          &lta href="#modal-close" title="modal-close" class="modal-close"&gtX&lt/a&gt <br>
+                        &lt/div&gt <br>
+                        <br>
+
+                    &ltstyle&gt <br>
+                    h2, <br>
+                    .modal-link, <br>
+                    #modal-open { <br>
+                        text-align: center; <br>
+                    } <br>
+                    .modal-window { <br>
+                        position: fixed; <br>
+                        font-family: Arial, sans-serif; <br>
+                        top: 0; <br>
+                        right: 0; <br>
+                        bottom: 0; <br>
+                        left: 0; <br>
+                        background: rgba(0,0,0,0.1); <br>
+                        z-index: 99999; <br>
+                        opacity:0; <br>
+                        transition: opacity 0.3s ease-in; <br>
+                        pointer-events: none; <br>
+                    } <br>
+                    .modal-window:target { <br>
+                        opacity:1; <br>
+                        pointer-events: auto; <br>
+                    } <br>
+                    .modal-window-open { <br>
+                        width: 400px; <br>
+                        position: relative; <br>
+                        margin: 10% auto; <br>
+                        padding: 5px 20px 13px 20px; <br>
+                        border-radius: 10px; <br>
+                        background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%); <br>
+                    } <br>
+                    .modal-close { <br>
+                        background: rgb(5, 5, 5); <br>
+                        color: rgb(255, 255, 255); <br>
+                        line-height: 25px; <br>
+                        position: absolute; <br>
+                        right: -10px; <br>
+                        text-align: center; <br>
+                        top: -10px; <br>
+                        width: 25px; <br>
+                        text-decoration: none; <br>
+                        font-weight: bold; <br>
+                        border-radius: 10px; <br>
+                        box-shadow: 1px 1px 3px rgb(0, 0, 0); <br>
+                    } <br>
+                    .modal-close:hover {  <br>
+                            background: rgb(0, 80, 253);  <br>
+                    } <br>
+                    &lt/style&gt <br>
+                    <br>
+                   
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                    <div class="try-tuto">
+                        <h2>Création d'une Boîte Modale seulement en CSS</h2>
+                                <div class="tuto-modal-link"><a href="#tuto-modal-open">Cliquer pour ouvrir la Boîte Modale</a></div>
+                                <div id="tuto-modal-open" class="tuto-modal-window">
+                                <div class="tuto-modal-window-open">
+                                    <a href="#tuto-modal-close" class="tuto-modal-close">X</a>
+                            <h2>Boîte Modale</h2>
+                                    <p>Boîte Modale faite uniquement en CSS.</p>
+                                    <p>Appuyer sur la croix pour fermer.</p>
+                                </div>
+                        <a href="#tuto-modal-close" title="tuto-modal-close" class="tuto-modal-close">X</a></div>
+                        <style>
+        h2,
+        .tuto-modal-link,
+        #tuto-modal-open {
+            text-align: center;
+        }
+        .tuto-modal-window {
+            position: fixed;
+            font-family: Arial, sans-serif;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.1);
+            z-index: 99999;
+            opacity:0;
+            transition: opacity 0.3s ease-in;
+            pointer-events: none;
+        }
+        .tuto-modal-window:target {
+            opacity:1;
+            pointer-events: auto;
+        }
+        .tuto-modal-window-open {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+            border-radius: 10px;
+            background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%);
+        }
+        .tuto-modal-close {
+            background: rgb(5, 5, 5);
+            color: rgb(255, 255, 255);
+            line-height: 25px;
+            position: absolute;
+            right: -10px;
+            text-align: center;
+            top: -10px;
+            width: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 1px 1px 3px rgb(0, 0, 0);
+        }
+        .tuto-modal-close:hover { 
+                background: rgb(0, 80, 253); 
+                         }
+                        </style>
+                    </div>
+                </div>
+        </div>
+
+        <div class="index-category-tab-content" id="tuto-3" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 3
+            </div><br>
+                <div class="code-tuto">
+                </div>
+                <div class="desc-tuto">
+                </div>
+        </div>
+
+        <div class="index-category-tab-content" id="tuto-4" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 4
+            </div><br>
+                <div class="code-tuto">
+                </div>
+                <div class="desc-tuto">
+                </div>
+        </div>
+
+        <div class="index-category-tab-content" id="tuto-5" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 5
+            </div><br>
+                <div class="code-tuto">
+                </div>
+                <div class="desc-tuto">
+                </div>
+        </div>
+
+        <div class="index-category-tab-content" id="tuto-6" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 6
+            </div><br>
+                <div class="code-tuto">
+                </div>
+                <div class="desc-tuto">
+                </div>
+        </div>
+
+    </section>
+</body>
+</html>

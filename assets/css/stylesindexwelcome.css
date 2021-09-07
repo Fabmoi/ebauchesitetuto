@@ -1,0 +1,56 @@
+
+body {                                                          /* CORPS DU SITE */  
+    background-color: rgb(245, 222, 179);
+}
+a:link {                                                        /* SUPPRESSION SOULIGNEMENT DES LIENS */
+    text-decoration: none;
+}
+div.all-btn-nav {                                               /* BARRE NAVIGATION AVEC TOUS SES BOUTONS */
+    padding: 7px;
+    margin-bottom: 10px;
+    background-color: rgb(138, 43, 226);
+    display: flex;
+    justify-content: center;
+}
+button.btn-nav {                                                /* BOUTONS BARRE NAVIGATION */
+    margin: 0 5px;
+    font-weight: bold;
+}
+div.all-desc-site {                                             /* BLOC DE DESCRIPTION DU SITE */
+    margin: 5px auto 10px auto;
+    width: 55%;
+    border: solid 1px black;
+    background-color: rgb(0, 183, 255);
+}
+h1.title-desc-site {                                            /* TITRE DESCRIPTION DU SITE */
+    text-align: center;
+}
+div.desc-site {                                                 /* DESCRIPTION DU SITE */
+    padding-bottom: 10px;
+}
+div.zone-tuto {                                                 /* BLOC DES TUTOS PAR LANGAGE */
+    margin-top: 25px;
+    border: solid 1px black;
+    background-color: rgb(255,255,255);
+    display: flex;
+    flex-flow: row wrap;
+}
+div.tuto {                                                      /* BLOCS TUTOS */
+    width: 275px;
+    height: 275px;
+    margin: 10px auto;
+    padding-left: 3px;
+    position: relative;
+    border: double 1px black;
+    background-color: rgb(135, 206, 235);
+}
+p.title-language {                                              /* BLOC PAR LANGAGE */
+    text-align: center;
+    font-weight: bold
+}
+button.see-tuto {                                               /* BOUTONS VOIR TUTO */
+    position: absolute;
+    bottom: 10px;
+    font-weight: bold;
+}
+
