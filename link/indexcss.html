@@ -19,7 +19,7 @@
     <section class="index-category-system-tabs">                                    <!-- TUTORIELS -->
         <nav-tabs class="index-category-nav-tabs" id="tuto">                        <!-- ONGLETS -->                   
             <a href="#tuto-1" aria-selected="true">Reset CSS</a>
-            <a href="#tuto-2">Fenêtre modale seulement en CSS</a>
+            <a href="#tuto-2">Boîte modale seulement en CSS</a>
             <a href="#tuto-3">Présentation tutoriel 3</a>
             <a href="#tuto-4">Présentation tutoriel 4</a>
             <a href="#tuto-5">Présentation tutoriel 5</a>
@@ -81,103 +81,115 @@
         </div>
 
         <div class="index-category-tab-content" id="tuto-2" hidden="hidden">        <!-- FENÊTRE MODALE CSS ONLY -->      
-            <div class="title-tuto">Fenêtre modale seulement en CSS
+            <div class="title-tuto">Boîte modale seulement en CSS
             </div><br>
                 <div class="code-tuto"> 
-                   
-                        &lth2&gtCréation d'une Boîte Modale seulement en CSS&lt/h2&gt <br>
-                        &ltdiv class="modal-link"&gt&lta href="#modal-open"&gtCliquer pour ouvrir la Boîte Modale&lt/a&gt&lt/div&gt <br>
-                        &ltdiv id="modal-open" class="modal-window"&gt <br>
-                          &ltdiv class="modal-window-open"&gt <br>
-                            &lta href="#modal-close" class="modal-close"&gtX&lt/a&gt <br>
-                            &lth2&gtBoîte Modale&lt/h2&gt <br>
-                            &ltp&gtBoîte Modale faite uniquement en CSS.&lt/p&gt <br>
-                            &ltp&gtAppuyer sur la croix pour fermer.&lt/p&gt <br>
-                          &lt/div&gt <br>
-                          &lta href="#modal-close" title="modal-close" class="modal-close"&gtX&lt/a&gt <br>
-                        &lt/div&gt <br>
-                        <br>
-
-                    &ltstyle&gt <br>
-                    h2, <br>
-                    .modal-link, <br>
-                    #modal-open { <br>
-                        text-align: center; <br>
-                    } <br>
-                    .modal-window { <br>
-                        position: fixed; <br>
-                        font-family: Arial, sans-serif; <br>
-                        top: 0; <br>
-                        right: 0; <br>
-                        bottom: 0; <br>
-                        left: 0; <br>
-                        background: rgba(0,0,0,0.1); <br>
-                        z-index: 99999; <br>
-                        opacity:0; <br>
-                        transition: opacity 0.3s ease-in; <br>
-                        pointer-events: none; <br>
-                    } <br>
-                    .modal-window:target { <br>
-                        opacity:1; <br>
-                        pointer-events: auto; <br>
-                    } <br>
-                    .modal-window-open { <br>
-                        width: 400px; <br>
-                        position: relative; <br>
-                        margin: 10% auto; <br>
-                        padding: 5px 20px 13px 20px; <br>
-                        border-radius: 10px; <br>
-                        background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%); <br>
-                    } <br>
-                    .modal-close { <br>
-                        background: rgb(5, 5, 5); <br>
-                        color: rgb(255, 255, 255); <br>
-                        line-height: 25px; <br>
-                        position: absolute; <br>
-                        right: -10px; <br>
-                        text-align: center; <br>
-                        top: -10px; <br>
-                        width: 25px; <br>
-                        text-decoration: none; <br>
-                        font-weight: bold; <br>
-                        border-radius: 10px; <br>
-                        box-shadow: 1px 1px 3px rgb(0, 0, 0); <br>
-                    } <br>
-                    .modal-close:hover {  <br>
-                            background: rgb(0, 80, 253);  <br>
-                    } <br>
-                    &lt/style&gt <br>
-                    <br>
-                   
+            <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT HTML ----------------------------------------*/</div>
+                <br><br>
+                &lt;div class="modal-link"&gt; <br>
+                &nbsp;&nbsp;  &lt;a href="#modal-open"&gt;Cliquer pour ouvrir la Boîte Modale&lt;/a&gt; <br>
+                &lt;/div&gt; <br> <br>
+                &lt;div id="modal-open" class="modal-window"&gt; <br>
+                &lt;div class="modal-window-open"&gt; <br>
+                &nbsp;&nbsp;  &lt;a href="#modal-close" id="modal-close"&gt;X&lt;/a&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;  &lt;h2&gt;Boîte Modale&lt;/h2&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p&gt;Boîte Modale faite uniquement en CSS.&lt;/p&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p&gt;Appuyer sur la croix pour fermer.&lt;/p&gt; <br>
+                &lt;/div&gt; <br>
+                &lt;/div&gt; <br>
+                <br>
+            <div class="balise-comm-tuto">/*---------------------------------------- FIN HTML ----------------------------------------*/</div> 
+            <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div> 
+                <br>
+                &lt;style&gt; <br>
+            <div class="comm-tuto">/*---------- ouverture et texte boîte modale ----------*/</div>
+                h2, <br>
+                .modal-link, <br>
+                #modal-open { <br>
+                    text-align: center; <br>
+                } <br>
+            <div class="comm-tuto">/*---------- titre boîte modale ----------*/</div>
+                h2 { <br>
+                    font-weight: bold; <br>
+                } <br>
+            <div class="comm-tuto">/*---------- boîte modale ----------*/</div>
+                .modal-window { <br>
+                    position: fixed; <br>
+                    top: 0; <br>
+                    right: 0; <br>
+                    bottom: 0; <br>
+                    left: 0; <br>
+                    z-index: 10; <br>
+                    opacity: 0; <br>
+                    background: rgba(0,0,0,0.8); <br>
+                    transition: opacity 0.3s ease-in; <br>
+                    pointer-events: none; <br>
+                } <br>
+            <div class="comm-tuto">/*---------- opacité boîte modale ----------*/</div>
+                .modal-window:target { <br>
+                    opacity:1; <br>
+                    pointer-events: auto; <br>
+                } <br>
+            <div class="comm-tuto">/*---------- boîte modale une fois ouverte ----------*/</div>
+                .modal-window-open { <br>
+                    width: 400px; <br>
+                    position: relative; <br>
+                    margin: 10% auto; <br>
+                    padding: 15px 20px; <br>
+                    border-radius: 10px; <br>
+                    background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%); <br>
+                } <br>
+            <div class="comm-tuto">/*---------- petite croix de fermeture ----------*/</div>
+                #modal-close { <br>
+                    background: rgb(0,0,0); <br>
+                    color: rgb(255,255,255); <br>
+                    line-height: 25px; <br>
+                    position: absolute; <br>
+                    right: -10px; <br>
+                    top: -10px; <br>
+                    text-align: center; <br>
+                    width: 25px; <br>
+                    text-decoration: none; <br>
+                    font-weight: bold; <br>
+                    border-radius: 10px; <br>
+                    box-shadow: 1px 1px 3px rgb(0, 0, 0); <br>
+                } <br>
+            <div class="comm-tuto">/*---------- petite croix de fermeture au survol ----------*/</div>
+                #modal-close:hover {  <br>
+                        background: rgb(0, 80, 253);  <br>
+                } <br>
+                &lt;/style&gt; <br>
+                <br>
+            <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
                 </div>
-                <div class="desc-tuto">
+            <div class="desc-tuto">
                     <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
                     <div class="try-tuto">
-                        <h2>Création d'une Boîte Modale seulement en CSS</h2>
                                 <div class="tuto-modal-link"><a href="#tuto-modal-open">Cliquer pour ouvrir la Boîte Modale</a></div>
                                 <div id="tuto-modal-open" class="tuto-modal-window">
                                 <div class="tuto-modal-window-open">
-                                    <a href="#tuto-modal-close" class="tuto-modal-close">X</a>
+                                    <a href="#tuto-modal-close" id="tuto-modal-close">X</a>
                             <h2>Boîte Modale</h2>
                                     <p>Boîte Modale faite uniquement en CSS.</p>
                                     <p>Appuyer sur la croix pour fermer.</p>
-                                </div>
-                        <a href="#tuto-modal-close" title="tuto-modal-close" class="tuto-modal-close">X</a></div>
+                                </div></div>
                         <style>
         h2,
         .tuto-modal-link,
         #tuto-modal-open {
             text-align: center;
         }
+        h2 {
+            font-weight: bold;
+        }
         .tuto-modal-window {
             position: fixed;
-            font-family: Arial, sans-serif;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgba(0,0,0,0.1);
-            z-index: 99999;
+            background: rgba(0,0,0,0.8);
+            z-index: 10;
             opacity:0;
             transition: opacity 0.3s ease-in;
             pointer-events: none;
@@ -190,30 +202,96 @@
             width: 400px;
             position: relative;
             margin: 10% auto;
-            padding: 5px 20px 13px 20px;
+            padding: 15px 20px;
             border-radius: 10px;
             background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%);
         }
-        .tuto-modal-close {
-            background: rgb(5, 5, 5);
+        #tuto-modal-close {
+            background: rgb(0, 0, 0);
             color: rgb(255, 255, 255);
             line-height: 25px;
             position: absolute;
             right: -10px;
-            text-align: center;
             top: -10px;
+            text-align: center;
             width: 25px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 10px;
             box-shadow: 1px 1px 3px rgb(0, 0, 0);
         }
-        .tuto-modal-close:hover { 
+        #tuto-modal-close:hover { 
                 background: rgb(0, 80, 253); 
                          }
                         </style>
                     </div>
+                    <hr><hr>
+                <div class="expl-desc-tuto">
+                        Ici, j'ai créé une boîte modale en utilisant seulement HTML et CSS. <br>
+                        J'ai inséré le CSS dans la balise <strong>&lt;style&gt;</strong> juste ici pour mon tutoriel mais sinon, je le mets dans une feuille de style reliée au HTML.<br>
+                        <br>
+
+                    <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        J'ai mit des commentaires en vert en majuscules pour séparer le HTML du CSS et en minuscule avant chaque sélecteurs dans le CSS afin de faciliter la lecture des codes. <br>
+                        Je choisis chaque noms de class et d'ID en fonction du comportement que j'attends de chacune d'entre elles. <br>
+                        <br>
+                        Tout d'abord, je crée une première <strong>div</strong> à laquelle je donne la <strong>class "modal-link"</strong> dans laquelle je mets le lien <strong>href="#modal-open"</strong>. <br>
+                        Je mets comme titre de lien <strong>'Cliquer pour ouvrir la boîte modale'</strong> sur lequel il faudra cliquer pour ouvrir la boîte modale. <br>
+                        <br>
+                        Ensuite, je crée une <strong>div</strong> qui sera la boîte modale avec l'<strong>ID "modal-open"</strong> pour faire le lien avec le lien <strong>href="#modal-open"</strong> donné juste au-dessus. <br>
+                        Je lui donne aussi la <strong>class "modal-window"</strong> <br>
+                        À l'intérieur de cette <strong>div</strong>, je crée une autre <strong>div</strong> qui elle, représente la boîte modale une fois ouverte avec la <strong>class "modal-window-open"</strong> <br>
+                        Dans la <strong>div "modal-window-open"</strong>, je crée un lien <strong>href="#modal-close"</strong> qui servira de lien vers l'<strong>ID "modal-close"</strong>. <br>
+                        Je donne à ce même lien href l' <strong>'ID "modal-close"</strong> (qui fera lien vers lui-même) et je mets un <strong>X</strong> qui me servira de croix de fermeture de la boîte modale. <br>
+                        Toujours dans la <strong>div "modal-window-open"</strong>, je mets en titre <strong>h2 'Boîte modale'</strong> qui sera visible une fois la boîte modale ouverte. <br>
+                        Ensuite, le texte de la boîte modale. <br>
+                        Dans mon cas, 2 paragraphes avec la balise <strong>&lt;p&gt;</strong> le premier simplement pour dire <strong>Boîte modale faite uniquement en CSS</strong> et le deuxième pour dire <strong>Appuyer sur la croix pour fermer</strong>. <br>
+                        Je ferme ensuite les <strong>div "modal-window-open"</strong> et <strong>"modal-window"</strong> <br>
+                        <br>
+
+                    <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        En premier lieu, je donne aux sélecteurs 
+                        <strong> <br>
+                            h2, <br>
+                            .modal-link, <br>
+                            #modal-open</strong> <br>
+                        la propriété <strong>text-align: center;</strong> pour aligner les textes au centre. <br>
+                        Je rajoute une propriété <strong>font-weight: bold;</strong> au <strong>h2</strong> pour qu'il soit écrit en gras. <br>
+                        <br>
+                        Pour le sélecteur <br>
+                        <strong>.modal-window</strong> qui est la boîte modale qui s'ouvrira lors du clic sur <strong>'Cliquer pour ouvrir la boîte modale'</strong>, <br>
+                        Je lui donne la propiété <strong>fixed</strong> afin qu'elle reste fixe et une valeur de <strong>0</strong> pour chacune des propriétés <strong>top, right, bottom</strong> et <strong>left</strong> pour que celà remplisse toute la fenêtre. <br>
+                        Je lui donne un <strong>Z-index: 10;</strong> pour m'assurer qu'il soit superposé plus haut que le restant de la page et une <strong>opacity: 0;</strong> qui empêche la boîte modale d'être visible quand elle n'est pas ouverte. <br>
+                        Je rajoute aussi un <strong>background: rgba(0,0,0,0.8);</strong> qui est de couleur noire avec une opacité de 0.8 qui camouflera partiellement le restant de la page lors de l'ouverture de la boîte modale. <br>
+                        Ensuite, je donne une <strong>transition: opacity 0.3s ease-in;</strong> juste pour avoir un petit effet d'apparition au moment de l'ouverture de la boîte modale. <br>
+                        Et pour terminer, un <strong>pointer-events: none;</strong> afin de pouvoir cliquer sur les liens d'ouverture et de fermeture de la boîte modale. <br> 
+                        <br>
+                        Pour le sélecteur <br> 
+                        <strong>.modal-window:target</strong> qui lui cible la boîte modale une fois ouverte grâce à la <strong>pseudo-classe :target</strong> <br>
+                        Je donne une <strong>opacity: 1;</strong> afin de rendre la boîte modale visible une fois ouverte et un <strong>pointer-events: auto;</strong> afin de pouvoir cliquer sur la <strong>X</strong> de fermeture de la boîte modale. <br>
+                        <br>
+                        Pour le sélecteur <br>
+                        <strong>.modal-window-open</strong> qui est la boîte modale une fois ouverte, <br>
+                        je lui donne un <strong>width: 400px;</strong> pour spécifier sa largeur qui fait donc 400 pixels. <br>
+                        Une <strong>position: relative;</strong> qui va la faire hériter du <strong>text-align: center;</strong> venant de la <strong>div id="modal-open"</strong> avec un <strong>margin: 10% auto;</strong> qui va lui donner une marge verticale de 10% et une marge horizontale automatique. <br>
+                        Je donne un <strong>padding: 15px 20px;</strong> qui donnera un écart intérieur de 15 pixels sur le haut et sur le bas et de 20 pixels sur la gauche et sur la droite. <br>
+                        Je mets un <strong>border-radius: 10px;</strong> pour arrondir un peu les coins de la boîte modale. <br>
+                        Et pour finir, un <strong>background: linear-gradient(to left, rgb(12, 240, 62) 0%, rgb(0, 89, 255) 100%);</strong> pour donner à la boîte modale une couleur dégradée alant du bleu au vert en partant de la gauche vers la doite. <br>
+                        <br>
+                        Pour le sélecteur <br>
+                        <strong>#modal-close</strong> qui lui est la boîte de la petite croix de fermeture de la boîte modale. <br>
+                        Un <strong>background: rgb(0,0,0);</strong> pour lui donner un arrière-plan noir et <strong>color: rgb(255,255,255);</strong> pour lui donner une couleur blanche. <br>
+                        Le <strong>line-height: 25px;</strong> quant à lui donnera un peu plus de hauteur à la petite boîte contenant la croix de fermeture. <br>
+                        Une <strong>position: absolute;</strong> avec un <strong>right: -10px;</strong> et un <strong>top: -10px;</strong> pour la placer en haut à droite en partie à l'intérieur et à l'extérieur de la boîte modale. <br>
+                        Un <strong>width: 25px;</strong> pour lui donner une largeur de 25 pixels. <br>
+                        J'enlève le soulignement de la croix avec <strong>text-decoration: none;</strong>, je la mets en gras avec <strong>font-weight: bold;</strong>. <br>
+                        Un <strong>border-radius: 10px;</strong> pour donner un petit arrondi aux coins de la petite boîte et je donne une légère ombre noire à la petite boîte avec <strong>box-shadow: 1px 1px 3px rgb(0, 0, 0);</strong> <br>
+                        <br>
+                        Le sélecteur <strong>#modal-close:hover</strong> lui va servir à changer la couleur de la boîte de la petite croix de fermeture de la boîte modale grâce à la <strong>pseudo-class :hover</strong>. <br>Je lui donne simplement une couleur bleue avec <strong>background: rgb(0, 80, 253);</strong> <br>
+                        <br>
+                        Voilà, l'apparence peut tout à fait être modifiée à l'aide des propriétés et valeurs du CSS sans aucun soucis.
                 </div>
+            </div>
         </div>
 
         <div class="index-category-tab-content" id="tuto-3" hidden="hidden">

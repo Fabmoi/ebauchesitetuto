@@ -136,16 +136,39 @@ header {                                                                        
     color: rgb(0,0,0);
     line-height: 1.5;
 }
-.title-desc-tuto {
+.title-desc-tuto {                                                              /* TITRE DESCRIPTION TUTORIEL */
     font-size: 25px;
     text-align: center;
+}
+.try-tuto {                                                                     /* ESSAI TUTORIEL */                                                          
+    margin-bottom: 25px;
+}
+.try-tuto a {                                                                   /* ESSAI TUTORIEL LIEN */
+    text-decoration: underline;
+}
+hr {                                                                            /* LIGNES DE SÉPARATION DANS DESCRIPTION TUTORIEL */
+    height: 5px;
+    border: double rgb(0,0,0);
+    text-align: center;
+}
+strong {                                                                        /* MISE EN GRAS DE NOMS DE SÉLECTEURS DANS MES TUTORIELS */
+    font-weight: bold;
 }
 .desc-tuto {                                                                    /* CADRE DESCRIPTION TUTORIEL */
     position: absolute;
     right: 10px;
     top: 51px;
 }
-
+.expl-desc-tuto {                                                               /* TEXTE EXPLICATION TUTORIEL */
+    margin-top: 20px;
+}
+.balise-comm-tuto,
+.comm-tuto {                                                                    /* COULEUR COMMENTAIRES DANS CODES TUTORIELS */
+    color: rgb(34, 165, 34);
+}
+.comm-tuto {                                                                    /* PETITS COMMENTAIRES DANS CODES TUTORIELS */
+    padding-left: 150px;
+}
 
 
 
