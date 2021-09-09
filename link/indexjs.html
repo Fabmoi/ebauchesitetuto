@@ -21,7 +21,7 @@
             <a href="#tuto-1" aria-selected="true">Changer couleur mots</a>
             <a href="#tuto-2">Compteur de clics</a>
             <a href="#tuto-3">Compteur de clics avec clics automatiques</a>
-            <a href="#tuto-4">Présentation tutoriel 4</a>
+            <a href="#tuto-4">Compteur de clics avec reset par confirmation</a>
             <a href="#tuto-5">Présentation tutoriel 5</a>
             <a href="#tuto-6">Présentation tutoriel 6</a>
         </nav-tabs>
@@ -194,21 +194,21 @@
                              }
                             </style>
                             <script type="text/javascript">
-                            var counterClick = 0;
-                            document.getElementById("click-here").addEventListener("click", function() {
-                                    counterClick++;
-                                    document.getElementById("click-counter").innerHTML = counterClick;
-                            });
+                                var counterClick = 0;
+                                document.getElementById("click-here").addEventListener("click", function() {
+                                        counterClick++;
+                                        document.getElementById("click-counter").innerHTML = counterClick;
+                                });
                             </script>
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
-                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
-                        Ici, j'ai créé une fonction JavaScript afin de changer de créer un compteur de clics. <br>
+                        
+                        Ici, j'ai créé une fonction JavaScript afin de créer un compteur de clics. <br>
                         J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
                         Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
                         <br>
-
                             <strong>&lt;div id="click-counter"&gt;0&lt;/div&gt;</strong> <br>
                             Ici, je crée juste une <strong>div</strong> ayant l'<strong>ID click-counter</strong> avec comme texte <strong>0</strong>. <br>
                             C'est la div ou s'affichera le compteur de clics. <br>
@@ -224,7 +224,8 @@
                                 #click-counter, <br>
                                 #click-here { <br>
                                 text-align: center; <br>
-                                }</strong> 
+                                }
+                            </strong> 
                                 <br>
                                 Ici, j'ai juste mit les sélecteurs des <strong>ID click-counter</strong> et <strong>ID click-here</strong> afin de les positionner au centre avec la proriété <strong>text-align</strong> à laquelle j'ai donné la valeur <strong>center</strong> <br>
                                 <br>
@@ -384,31 +385,149 @@
                     </div>
             </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-4" hidden="hidden">
-            <div class="title-tuto">Présentation tutoriel 4
+        <div class="index-category-tab-content" id="tuto-4" hidden="hidden">                <!-- COMPTEUR DE CLICS AVEC RESET PAR CONFIRMATION -->
+            <div class="title-tuto">Compteur de clics avec reset par confirmation
             </div><br>
                 <div class="code-tuto">
-                    
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT HTML ----------------------------------------*/</div>
+                    &lt;div id="click-counter2"&gt;0&lt;/div&gt; <br>
+                    &lt;div id="click-here2"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt; <br>
+                    &lt;div class="reset-btn"&gt;→→→&lt;button id="reset-button"&gt;RESET&lt;/button&gt;←←←&lt;/div&gt; <br>
+                    &lt;p&gt;Donner tous vos clics pour rien en retour&lt;/p&gt; <br>
+                        <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN HTML ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div>
+                        &lt;style type="text/css"&gt; <br>
+                        #click-counter2, <br>
+                        #click-here2, <br>
+                        .reset-btn, <br>
+                        p { <br>
+                            text-align: center; <br>
+                         } <br>
+                         .reset-btn { <br>
+                             margin: 10px; <br>
+                         } <br>
+                        &lt;/style&gt; <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT JS ----------------------------------------*/</div>
+                        &lt;script type="text/javascript"&gt; <br>
+                        <br>
+                        <div class="balise-comm-tuto">// fonction pour le compteur de clics</div> 
+                                var counterClick2 = 0; <br>
+                                document.getElementById("click-here2").addEventListener("click", function() { <br>
+                                        counterClick2++; <br>
+                                        document.getElementById("click-counter2").innerHTML = counterClick2; <br>
+                                }); <br>
+                                <br>
+                        <div class="balise-comm-tuto">// fonction pour le reset du compteur de clics</div> 
+                                document.getElementById("reset-button").addEventListener("click", function() { <br>
+                                var reset = confirm("En continuant, vous perdrez tous vos clics sans rien recevoir en échange"); <br>
+                                    if (reset == true) { <br>
+                                        counterClick2 = 0; <br>
+                                    document.getElementById("click-counter2").innerHTML = counterClick2; <br>
+                                    } <br>
+                                }); <br>
+                        &lt;/script&gt; <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN JS ----------------------------------------*/</div>
                 </div>
                 <div class="desc-tuto">
                     <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
                         <div class="try-tuto">
+                            <div id="click-counter2">0</div>
+                            <div id="click-here2"><button>Cliquez ici</button></div>
+                            <div class="reset-btn">→→→<button id="reset-button">RESET</button>←←←</div>
+                            <p>Donner tous vos clics pour rien en retour</p>
+
+                            <style type="text/css">
+                            #click-counter2,
+                            #click-here2,
+                            .reset-btn,
+                            p {
+                                text-align: center;
+                             }
+                             .reset-btn {
+                                 margin: 10px;
+                             }
+                            </style>
+
+                            <script type="text/javascript">
+                            // COMPTEUR DE CLICS
+                                var counterClick2 = 0;
+                                document.getElementById("click-here2").addEventListener("click", function() {
+                                        counterClick2++;
+                                        document.getElementById("click-counter2").innerHTML = counterClick2;
+                                });
+                            // RESET COMPTEUR DE CLICS
+                                document.getElementById("reset-button").addEventListener("click", function() {
+                                var reset = confirm("En continuant, vous perdrez tous vos clics sans rien recevoir en échange");
+                                    if (reset == true) {
+                                        counterClick2 = 0;
+                                    document.getElementById("click-counter2").innerHTML = counterClick;
+                                    }
+                                });
+                            </script>
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
                         
+                        Ici, j'ai créé une fonction JavaScript afin de créer un bouton <strong>reset</strong> sur un compteur de clics. <br>
                         J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
                         Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
                         <br>
+                    <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                    
+                        <strong>&lt;div id="click-counter2"&gt;0&lt;/div&gt;</strong> <br>
+                            Ici, je crée juste une <strong>div</strong> ayant l'<strong>ID click-counter2</strong> avec comme texte <strong>0</strong>. <br>
+                            C'est la div ou s'affichera le compteur de clics. <br>
+                            <br>
+                            <strong>&lt;div id="click-here2"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt;</strong> <br>
+                            Ici, je crée une autre <strong>div</strong> à laquelle je donne l'<strong>ID click-here2</strong> dans laquelle je mets un <strong>button</strong> avec comme texte <strong>Cliquez ici</strong> <br>
+                            C'est le bouton sur lequel il faudra cliquer pour compter les clics. <br>
+                            <br>
+                            <strong>&lt;div class="reset-btn"&gt;→→→&lt;button id="reset-button"&gt;RESET&lt;/button&gt;←←←&lt;/div&gt;</strong> <br>
+                            Ici, j'ai crée une <strong>div</strong> avec la <strong>class reset-btn</strong> qui contient le <strong>button ID reset-button</strong> avec le texte <strong>→→→RESET←←←</strong> <br>
+                            C'est le bouton sur lequel il faudra cliquer pour faire <strong>RESET</strong> <br>
+                            Je crée ensuite un paragraphe pour prévenir de ce que fait le bouton comme ceci <br> <strong>&lt;p&gt;Donner tous vos clics pour rien en retour&lt;/p&gt;</strong> <br>
+                            <br>
 
-                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
-
-                        
-                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
-                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
-
+                    <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                            <br>
+                            Je donne aux sélecteurs suivants <strong>#click-counter2, #click-here2, .reset-btn, p</strong><br> 
+                            Un <strong>text-align: center;</strong> afin de les centrer. <br>
+                            Je donne au sélecteur <strong>.reset-btn</strong> <br>
+                            Un <strong>margin: 10px;</strong> afin de l'écarter un peu du bouton qui augmente le nombre de clics. <br>
+                            <br>
+                            
+                    <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                        Pour commencer, je crée la <strong>variable counterClick2</strong> que je rends égale à <strong>0</strong> comme ceci <br>
+                        <strong>var counterClick2 = 0;</strong> <br>
+                        Ensuite, à l'aide de <strong>document.getElementById("click-here2")</strong> je sélectionne la <strong>div</strong> ayant l'<strong>ID click-here2</strong> et je lui rajoute l'écouteur d'évènement <strong>addEventListener</strong> ayant pour fonction d'écouter le <strong>clic normal de la souris</strong> avec <br>
+                        <strong>("click", function()</strong> <br>
+                        Ce qui donne cette ligne <br>
+                        <strong>document.getElementById("click-here2").addEventListener("click", function() {</strong> <br>
+                        Ensuite, je donne à la variable <strong>counterClick2</strong> l'opérateur d'incrémentation <strong>++</strong> afin de faire augmenter sa valeur de 1 lors de chaque clics comme ceci <strong>counterClick2++;</strong> <br>
+                        Je finirai par lui dire que c'est la <strong> div ID click-counter2</strong> en utilisant <strong>document.getElementById("click-counter2")</strong> qui est celle ou il doit changer le texte correspondant nombre de clics avec <strong>.innerHTML</strong> et que le nombre devant être inscrit correspond à ma <strong>variable counterClick2</strong> ce qui donne cette ligne <br>
+                        <strong>document.getElementById("click-counter2").innerHTML = counterClick2;</strong> <br>
                         <br>
-                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
+                        Ensuite, je crée la fonction qui va s'occuper du bouton <strong>RESET</strong> <br>
+                        À l'aide de <strong>document.getElementById</strong>, je choisis le <strong>button ID reset-button</strong> auquel je rajoute l'écouteur d'évènement <strong>addEventListener</strong> ayant pour fonction d'écouter le <strong>clic normal de la souris</strong> comme ceci <br>
+                        <strong>document.getElementById("reset-button").addEventListener("click", function() {</strong> <br>
+                        Je déclare la variable <strong>var reset</strong> à laquelle j'affecte un <strong>confirm</strong> qui ouvrira une fenêtre de confirmation lors du clic sur le <strong>bouton RESET</strong> avec une petite phrase d'avertissement comme ceci <br>
+                        <strong>var reset = confirm("En continuant, vous perdrez tous vos clics sans rien recevoir en échange");</strong> <br>
+                        Ensuite, j'écris une <strong>condition</strong> comme ceci <br>
+                        <strong>
+                            if (reset == true) { <br>
+                            counterClick2 = 0; <br>
+                            document.getElementById("click-counter2").innerHTML = counterClick2; <br>
+                            }
+                        </strong> <br>
+                        Qui dit que si on clique sur <strong>OK</strong> dans la fenêtre de confirmation, que dans ce cas, il doit remettre le <strong>counterClick2</strong> à <strong>0</strong> dans le nombre de clics. <br>
+                        Cliquer sur <strong>Annuler</strong> ne fera perdre aucun clics. <br>
+                        <br>
+                        
+                        Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>       
                     </div>
             </div>
         </div>
