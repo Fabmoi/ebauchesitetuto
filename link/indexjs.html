@@ -18,7 +18,7 @@
 
     <section class="index-category-system-tabs">                        <!-- TUTO 1 -->
         <nav-tabs class="index-category-nav-tabs" id="tuto">                        
-            <a href="#tuto-1" aria-selected="true">Présentation tutoriel 1</a>
+            <a href="#tuto-1" aria-selected="true">Changer couleur mots</a>
             <a href="#tuto-2">Présentation tutoriel 2</a>
             <a href="#tuto-3">Présentation tutoriel 3</a>
             <a href="#tuto-4">Présentation tutoriel 4</a>
@@ -26,18 +26,218 @@
             <a href="#tuto-6">Présentation tutoriel 6</a>
         </nav-tabs>
     
-        <div class="index-category-tab-content" id="tuto-1">Présentation tutoriel 1
+        <div class="index-category-tab-content" id="tuto-1">
+            <div class="title-tuto">Changer couleur mots
+                </div><br>
+                    <div class="code-tuto">
+                        <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT HTML ----------------------------------------*/</div>
+                        &lt;body onload="putWordColor();"&gt; <br>
+                            &lt;div id="text-test"&gt;Lorem , ipsum dolor sit amet consectetur adipisicing elit . Quo placeat cupiditate natus mollitia alias similique vel atque accusantium amet repellendus sint quae odio quis beatae minima , nam blanditiis ! Similique , necessitatibus . Lorem ipsum dolor sit amet , consectetur adipisicing elit. Ut ullam temporibus totam similique itaque , sed enim voluptatum nam ab aliquid exercitationem , nihil debitis consequuntur praesentium iste accusamus . Veniam , illum . Molestiae .&lt;/div&gt; <br>
+                        &lt;/body&gt; <br>
+                        <div class="balise-comm-tuto">/*---------------------------------------- FIN HTML ----------------------------------------*/</div>
+                        <br>
+                        <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div>
+                        &lt;style type="text/css"&gt; <br>
+                            .red {color: rgb(255, 0, 0);}  <br>
+                            .green {color: rgb(0, 128, 0);} <br>
+                            .blue {color: rgb(0, 0, 255);} <br>
+                        &lt;/style&gt; <br>
+                        <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
+                        <br>
+                        <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT JS ----------------------------------------*/</div>
+                        &lt;script type="text/javascript"&gt;    <br>   
+                            var wordColor = document.getElementById("text-test"); <div class="comm-tuto">//Ici récupération du contenu dont je veux changer la couleur des mots</div> <br>
+                        <div class="comm-tuto">//création de la fonction</div>
+                            function putWordColor(){ <br>
+                                var words = wordColor.textContent.split(" ") <div class="comm-tuto">//Variable contenant mon texte splitté</div> <br>
+                                
+                                wordColor.innerHTML=""; <br>
+                                <br>
+                                words.forEach((word) =&gt; { <br>
+                                    var sp = wordColor.appendChild(document.createElement("span")); <div class="comm-tuto">//Ajout de span à chaque mots du texte</div> <br>
+                                    sp.textContent = word + " "; <br>
+                                    <br>
+                                    if(word==="Lorem"){sp.classList.add("red")}; <div class="comm-tuto">//Ajoute la classe red au mot Lorem</div> <br>
+                                    if(word==="amet"){sp.classList.add("green")}; <div class="comm-tuto">//Ajoute la classe green au mot amet</div> <br>
+                                    if(word==="ipsum"){sp.classList.add("blue")}; <div class="comm-tuto">//Ajoute la classe blue au mot ipsum</div> 
+                                }) <br>
+                            } <br>
+                        &lt;/script&gt; <br>
+                        <div class="balise-comm-tuto">/*---------------------------------------- FIN JS ----------------------------------------*/</div>
+
+                    </div>
+                    <div class="desc-tuto">
+                        <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                            <div class="try-tuto">
+                                <body onload="putWordColor();">
+                                    <div id="text-test">Lorem , ipsum dolor sit amet consectetur adipisicing elit . Quo placeat cupiditate natus mollitia alias similique vel atque accusantium amet repellendus sint quae odio quis beatae minima , nam blanditiis ! Similique , necessitatibus . Lorem ipsum dolor sit amet , consectetur adipisicing elit. Ut ullam temporibus totam similique itaque , sed enim voluptatum nam ab aliquid exercitationem , nihil debitis consequuntur praesentium iste accusamus . Veniam , illum . Molestiae .</div>
+                                </body>
+        
+                                <style type="text/css">
+                                    .red {color: rgb(255, 0, 0);} 
+                                    .green {color: rgb(0, 128, 0);}
+                                    .blue {color: rgb(0, 0, 255);}
+                                </style>
+        
+                                <script type="text/javascript">      
+                                    var wordColor = document.getElementById("text-test"); //Ici récupération du contenu dont je veux changer la couleur des mots
+        
+                                    function putWordColor(){ //création de la fonction
+                                        var words = wordColor.textContent.split(" ") //Variable contenant mon texte splitté
+                                                
+                                        wordColor.innerHTML="";
+        
+                                        words.forEach((word) => {
+                                            var sp = wordColor.appendChild(document.createElement("span")); //Ajout de span à chaque mots du texte
+                                            sp.textContent = word + " ";
+                                            
+                                            if(word==="Lorem"){sp.classList.add("red")};     //Ajoute une classe au mot que je choisis
+                                            if(word==="amet"){sp.classList.add("green")};    //Ajoute une classe au mot que je choisis
+                                            if(word==="ipsum"){sp.classList.add("blue")};    //Ajoute une classe au mot que je choisis
+                                        })
+                                    }
+                                </script>
+                            </div>
+                        <hr><hr>
+                        <div class="expl-desc-tuto">
+                            Ici, j'ai créé une fonction JavaScript afin de changer de couleur les mots choisis. <br>
+                            J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                            Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                            <br>
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+
+                            Ici, c'est assez simple, je mets au body la fonction <strong>onload="putWordColor();"</strong> afin de la lancer directement au chargement du body, cette fonction sera définie dans la balise <strong>&lt;script&gt;</strong> <br>
+                            Je crée une <strong>div</strong> avec l'<strong>ID text-test</strong>, je la remplis avec <strong>lorem ipsum</strong> afin d'avoir un texte de remplissage comme exemple pour mon tutoriel. <br>
+                            <br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+
+                            Pour les besoins de mon tutoriel, j'utilise 3 sélecteurs auxquels je donne simplement comme nom la couleur que je leur donnerai. <br>
+                            <strong>.red {color:rgb(255, 0, 0);}</strong> pour le rouge <br>
+                            <strong>.green {color: rgb(0, 128, 0);}</strong> pour le vert <br>
+                            <strong>.blue {color: rgb(0, 0, 255);}</strong> pour le bleu <br>
+                            <br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+
+                        <strong>var wordColor = document.getElementById("text-test");</strong> <br>
+                            Ici, je crée la <strong>variable wordColor</strong> et je sélectionne avec <strong>document.getElementById("text-test")</strong> le contenu de la div qui à l'<strong>ID text-test</strong> dont je veux changer la couleur de certains mots <br>
+                            Ce qui fera que la <strong>variable wordColor</strong> sera équivalente au contenu de la div ayant l'<strong>ID text-test</strong> <br>
+                            <br>
+                            <strong>function putWordColor(){}</strong> <br>
+                            Ici, j'ai crée la fonction <strong>putWordColor</strong> mais, il faut encore lui dire ce qu'elle doit faire. <br>
+                            <strong>var words = wordColor.textContent.split(" ")</strong> <br>
+                            Dans la fonction <strong>putWordColor</strong>, à l'intérieur des accolades <strong>{ }</strong> je crée une nouvelle variable que je nomme <strong>words</strong>, cette nouvelle variable sera égale la <strong>variable wordColor</strong> créée plus haut dont le contenu est devenu un texte splitté afin de pouvoir changer la couleur des mots que j'aurai choisis. En gros, celà aura mit chaque mots entre des guillemets simples, pour voir à quoi celà ressemble, il suffit de mettre <strong>console.log(words);</strong> <br>
+                            <strong>wordColor.innerHTML="";</strong> <br>
+                            Ici, je définis simplement la valeur de <strong>innerHTML</strong> avec <strong>wordColor.</strong> afin de pouvoir remplacer les mots existants par des nouveaux qui seront colorés. <br>
+                            <strong>words.forEach((word) => {</strong> <br>
+                            Ici, je lui dit de prendre chaque <strong>word</strong> (mots) de <strong>words</strong> (variable définie plus haut contenant le texte splitté) et de mettre l'élément <strong>span</strong> à chaque mots sur la ligne suivante et je nomme celà avec une nouvelle variable que je nomme <strong>sp</strong><br>
+                            <strong>var sp = wordColor.appendChild(document.createElement('span'));</strong> <br>
+                            <strong>sp.textContent = word + " ";</strong> <br>
+                            Ici, je lui demande de réécrire le nouveau texte dont chaque mot se trouve maintenant dans un <strong>span</strong> et le <strong>+ " "</strong> pour dire de mettre un écart entre chaque mots <br>
+                            Pour voir à quoi celà ressemble, il suffit de mettre <strong>console.log(sp);</strong> <br>
+                            <strong>
+                                if(word==="Lorem"){sp.classList.add("red")}; <br>
+                            </strong>
+                            Ici, j'utilise la condition <strong>if</strong> pour dire que si le mot est strictement égal au mot choisi <strong>(word==="Lorem")</strong><br>
+                            de lui ajouter la classe red <strong>{sp.classList.add("red")};</strong> qui elle, a été définie dans le CSS. <br>
+                            Pareil pour <br> <strong>
+                                if(word==="amet"){sp.classList.add("green")}; <br>
+                                if(word==="ipsum"){sp.classList.add("blue")}; </strong><br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
+                            
+                        </div>
+                </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-2" hidden="hidden">Présentation tutoriel 2
+        <div class="index-category-tab-content" id="tuto-2" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 2
+            </div><br>
+                <div class="code-tuto">
+                    
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                        <div class="try-tuto">
+                        </div>
+                    <hr><hr>
+                    <div class="expl-desc-tuto">
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                    </div>
+            </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-3" hidden="hidden">Présentation tutoriel 3
+        <div class="index-category-tab-content" id="tuto-3" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 3
+            </div><br>
+                <div class="code-tuto">
+                    
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                        <div class="try-tuto">
+                        </div>
+                    <hr><hr>
+                    <div class="expl-desc-tuto">
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                    </div>
+            </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-4" hidden="hidden">Présentation tutoriel 4
+        <div class="index-category-tab-content" id="tuto-4" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 4
+            </div><br>
+                <div class="code-tuto">
+                    
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                        <div class="try-tuto">
+                        </div>
+                    <hr><hr>
+                    <div class="expl-desc-tuto">
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                    </div>
+            </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-5" hidden="hidden">Présentation tutoriel 5
+        <div class="index-category-tab-content" id="tuto-5" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 5
+            </div><br>
+                <div class="code-tuto">
+                    
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                        <div class="try-tuto">
+                        </div>
+                    <hr><hr>
+                    <div class="expl-desc-tuto">
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                    </div>
+            </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-6" hidden="hidden">Présentation tutoriel 6
+        <div class="index-category-tab-content" id="tuto-6" hidden="hidden">
+            <div class="title-tuto">Présentation tutoriel 6
+            </div><br>
+                <div class="code-tuto">
+                    
+                </div>
+                <div class="desc-tuto">
+                    <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
+                        <div class="try-tuto">
+                        </div>
+                    <hr><hr>
+                    <div class="expl-desc-tuto">
+                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                    </div>
+            </div>
         </div>
+        
     </section>
 
 
