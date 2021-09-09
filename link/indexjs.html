@@ -16,17 +16,17 @@
     <p class="header-desc-index-tuto">Ici, je vais présenter mes tutoriels en JavaScript (Cliquez sur les onglets à gauche pour voir le tutoriel correspondant</p>
 </header>
 
-    <section class="index-category-system-tabs">                        <!-- TUTO 1 -->
+    <section class="index-category-system-tabs">                                            <!-- TUTO -->
         <nav-tabs class="index-category-nav-tabs" id="tuto">                        
             <a href="#tuto-1" aria-selected="true">Changer couleur mots</a>
-            <a href="#tuto-2">Présentation tutoriel 2</a>
-            <a href="#tuto-3">Présentation tutoriel 3</a>
+            <a href="#tuto-2">Compteur de clics</a>
+            <a href="#tuto-3">Compteur de clics avec clics automatiques</a>
             <a href="#tuto-4">Présentation tutoriel 4</a>
             <a href="#tuto-5">Présentation tutoriel 5</a>
             <a href="#tuto-6">Présentation tutoriel 6</a>
         </nav-tabs>
     
-        <div class="index-category-tab-content" id="tuto-1">
+        <div class="index-category-tab-content" id="tuto-1">                                <!-- CHANGER COULEUR MOT -->
             <div class="title-tuto">Changer couleur mots
                 </div><br>
                     <div class="code-tuto">
@@ -38,14 +38,17 @@
                         <br>
                         <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div>
                         &lt;style type="text/css"&gt; <br>
+                        <br>
                             .red {color: rgb(255, 0, 0);}  <br>
                             .green {color: rgb(0, 128, 0);} <br>
                             .blue {color: rgb(0, 0, 255);} <br>
+                            <br>
                         &lt;/style&gt; <br>
                         <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
                         <br>
                         <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT JS ----------------------------------------*/</div>
-                        &lt;script type="text/javascript"&gt;    <br>   
+                        &lt;script type="text/javascript"&gt; <br> 
+                        <br>  
                             var wordColor = document.getElementById("text-test"); <div class="comm-tuto">//Ici récupération du contenu dont je veux changer la couleur des mots</div> <br>
                         <div class="comm-tuto">//création de la fonction</div>
                             function putWordColor(){ <br>
@@ -147,39 +150,237 @@
                         </div>
                 </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-2" hidden="hidden">
-            <div class="title-tuto">Présentation tutoriel 2
+        <div class="index-category-tab-content" id="tuto-2" hidden="hidden">                <!-- COMPTEUR DE CLICS -->
+            <div class="title-tuto">Compteur de clics
             </div><br>
                 <div class="code-tuto">
-                    
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT HTML ----------------------------------------*/</div>
+                        &lt;div id="click-counter"&gt;0&lt;/div&gt; <br>
+                        &lt;div id="click-here"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt; <br>
+                        <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN HTML ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div>
+                        &lt;style type="text/css"&gt; <br>
+                            #click-counter, <br>
+                            #click-here { <br>
+                        text-align: center; <br>
+                        } <br>
+                        &lt;/style&gt; <br>
+                        <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT JS ----------------------------------------*/</div>
+                        &lt;script type="text/javascript"&gt; <br>
+                        var counterClick = 0; <br>
+                        <br>
+                        document.getElementById("click-here").addEventListener("click", function() { <br>
+                        counterClick++; <br>
+                            document.getElementById("click-counter").innerHTML = counterClick; <br>
+                        }); <br>
+                        &lt;/script&gt; <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN JS ----------------------------------------*/</div>
                 </div>
                 <div class="desc-tuto">
                     <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
                         <div class="try-tuto">
+                            <div id="click-counter">0</div>
+                            <div id="click-here"><button>Cliquez ici</button></div>
+
+                            <style type="text/css">
+                             #click-counter,
+                             #click-here{
+                                text-align: center;
+                             }
+                            </style>
+                            <script type="text/javascript">
+                            var counterClick = 0;
+                            document.getElementById("click-here").addEventListener("click", function() {
+                                    counterClick++;
+                                    document.getElementById("click-counter").innerHTML = counterClick;
+                            });
+                            </script>
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
                         <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        Ici, j'ai créé une fonction JavaScript afin de changer de créer un compteur de clics. <br>
+                        J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                        Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <br>
+
+                            <strong>&lt;div id="click-counter"&gt;0&lt;/div&gt;</strong> <br>
+                            Ici, je crée juste une <strong>div</strong> ayant l'<strong>ID click-counter</strong> avec comme texte <strong>0</strong>. <br>
+                            C'est la div ou s'affichera le compteur de clics. <br>
+                            <br>
+                            <strong>&lt;div id="click-here"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt;</strong> <br>
+                            Ici, je crée une autre <strong>div</strong> à laquelle je donne l'<strong>ID click-here</strong> dans laquelle je mets un <strong>button</strong> avec comme texte <strong>Cliquez ici</strong> <br>
+                            C'est le bouton sur lequel il faudra cliquer pour compter les clics. <br>
+                            <br>
+
                         <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+
+                            <strong>
+                                #click-counter, <br>
+                                #click-here { <br>
+                                text-align: center; <br>
+                                }</strong> 
+                                <br>
+                                Ici, j'ai juste mit les sélecteurs des <strong>ID click-counter</strong> et <strong>ID click-here</strong> afin de les positionner au centre avec la proriété <strong>text-align</strong> à laquelle j'ai donné la valeur <strong>center</strong> <br>
+                                <br>
+
                         <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                                Pour commencer, je crée la <strong>variable counterClick</strong> que je rends égale à <strong>0</strong> comme ceci <br>
+                                <strong>var counterClick = 0;</strong> <br>
+                                Ensuite, à l'aide de <strong>document.getElementById("click-here")</strong> je sélectionne la <strong>div</strong> ayant l'<strong>ID click-here</strong> et je lui rajoute l'écouteur d'évènement <strong>addEventListener</strong> ayant pour fonction d'écouter le <strong>clic normal de la souris</strong> avec <br>
+                                <strong>("click", function()</strong> <br>
+                                Ce qui donne cette ligne <br>
+                                <strong>document.getElementById("click-here").addEventListener("click", function() {</strong> <br>
+                                Ensuite, je donne à la variable <strong>counterClick</strong> l'opérateur d'incrémentation <strong>++</strong> afin de faire augmenter sa valeur de 1 lors de chaque clics comme ceci <strong>counterClick++;</strong> <br>
+                                Je finirai par lui dire que c'est la <strong> div ID click-counter</strong> en utilisant <strong>document.getElementById("click-counter")</strong> qui est celle ou il doit changer le texte correspondant nombre de clics avec <strong>.innerHTML</strong> et que le nombre devant être inscrit correspond à ma <strong>variable counterClick</strong> ce qui donne cette ligne <br>
+                                <strong>document.getElementById("click-counter").innerHTML = counterClick;</strong> <br>
+                                <br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
                     </div>
             </div>
         </div>
-        <div class="index-category-tab-content" id="tuto-3" hidden="hidden">
-            <div class="title-tuto">Présentation tutoriel 3
+        <div class="index-category-tab-content" id="tuto-3" hidden="hidden">                <!-- COMPTEUR DE CLICS AVEC CLICS AUTOMATIQUE -->
+            <div class="title-tuto">Compteur de clics avec clics automatiques
             </div><br>
                 <div class="code-tuto">
-                    
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT HTML ----------------------------------------*/</div>
+                        &lt;div id="click-number"&gt;0&lt;/div&gt; <br>
+                        &lt;div id="click-zone"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt; <br>
+                        <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN HTML ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT CSS ----------------------------------------*/</div>
+                        &lt;style type="text/css"&gt; <br>
+                            #click-number, <br>
+                            #click-zone { <br>
+                        text-align: center; <br>
+                        } <br>
+                        &lt;/style&gt; <br>
+                        <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN CSS ----------------------------------------*/</div>
+                    <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- DÉBUT JS ----------------------------------------*/</div>
+                        &lt;script type="text/javascript"&gt; <br>
+                        window.onload = function () { <br>
+                            let clickDiv = document.getElementById("click-zone"); <br>
+                            clickDiv.onclick = addClick; <br>
+                        } <br>
+                        <div class="comm-tuto">// fonction pour augmenter le compteur de clics et lancer le clic automatique</div> <br>
+                                                
+                        var numberClick = 0; <br>
+
+                        addClick = function() { <br>
+                            updateNumberClick(++numberClick); <br>
+                        } <br>
+
+                        function updateNumberClick(number) { <br>
+                            var autoClick = document.getElementById('click-zone'); <br>
+                            document.getElementById("click-number").innerHTML = number; <br>
+                            if (number == 15) { <br>
+                                setInterval(function(){ <br>
+                                if (numberClick <= 49) <br>
+                                    autoClick.click(); <br>
+                                },200); <br>
+                            } <br>
+                        } <br>
+                        &lt;/script&gt; <br>
+                    <div class="balise-comm-tuto">/*---------------------------------------- FIN JS ----------------------------------------*/</div>
                 </div>
                 <div class="desc-tuto">
                     <div class="title-desc-tuto">↓↓↓Essayer↓↓↓</div>
-                        <div class="try-tuto">
+                        <div class="try-tuto"><body onload="zz">
+                              
+                            <div id="click-number">0</div>
+                            <div id="click-zone"><button>Cliquez ici</button></div>
+                            
+                            <style type="text/css">
+                             #click-number,
+                             #click-zone{
+                                text-align: center;
+                             }
+                            </style>
+                            <script type="text/javascript">
+                            window.onload = function () {
+                                let clickDiv = document.getElementById("click-zone");
+                                clickDiv.onclick = addClick;
+}
+                                                    // FONCTION POUR AUGMENTER LE COMPTEUR DE CLIC ET AUTOCLIC
+                            var numberClick = 0;
+
+                            addClick = function() {
+                                updateNumberClick(++numberClick);
+                            }
+
+                            function updateNumberClick(number) {
+                                var autoClick = document.getElementById('click-zone');
+                                document.getElementById("click-number").innerHTML = number;
+                                if (number == 15) {
+                                    setInterval(function(){
+                                    if (numberClick <= 49)
+                                        autoClick.click();
+                                    },200);
+                                }
+                            }
+                            </script>
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
-                        <div class="title-desc-tuto">Quelques explications: HTML</div><br>
-                        <div class="title-desc-tuto">Quelques explications: CSS</div><br>
-                        <div class="title-desc-tuto">Quelques explications: JS</div><br>
+                        Ici, j'ai crée une fonction en Javascript qui permet de compter le nombre de clics et de lancer un autoclic une fois le nombre de 15 clics atteints et qui se stoppe une fois les 50 clics atteints. <br>
+                        J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                        Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <br>
+                    <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+                        
+                        <strong>&lt;div id="click-number"&gt;0&lt;/div&gt; <br></strong>
+                        Ici, je crée juste une <strong>div</strong> ayant l'<strong>ID click-number</strong> avec comme texte <strong>0</strong>. <br>
+                        C'est la div ou s'affichera le compteur de clics. <br>
+                        <br>
+                        <strong>&lt;div id="click-zone"&gt;&lt;button&gt;Cliquez ici&lt;/button&gt;&lt;/div&gt;</strong> <br>
+                        Ici, je crée une autre <strong>div</strong> à laquelle je donne l'<strong>ID click-zone</strong> dans laquelle je mets un <strong>button</strong> avec comme texte <strong>Cliquez ici</strong> <br>
+                        C'est le bouton sur lequel il faudra cliquer pour compter les clics et qui lancera le clic automatique. <br>
+                        <br>
+
+                    <div class="title-desc-tuto">Quelques explications: CSS</div><br>
+
+                        <strong>#click-number, <br>
+                            #click-zone { <br>
+                            text-align: center; <br>
+                            } <br></strong>
+
+                        Ici, j'ai juste mit les sélecteurs des <strong>ID click-number</strong> et <strong>ID click-zone</strong> afin de les positionner au centre avec la proriété <strong>text-align</strong> à laquelle j'ai donné la valeur <strong>center</strong> <br>
+                                <br>
+
+                    <div class="title-desc-tuto">Quelques explications: JS</div><br>
+
+                        Pour commencer, je crée le gestionnaire d'évènement <strong>window.onload = function()</strong> pour le chargement de la fenêtre. <br>
+                        Je donne comme référence à sa fonction une <strong>variable avec let</strong> plutôt que <strong>var</strong> pour sa portée limitée au sein du bloc dans lequel je la déclare et je sélectionne la <strong>div</strong> avec l'<strong>ID click-zone</strong> en utilisant <strong>document.getElementById</strong> ce qui me donne cette ligne <br> 
+                        <strong>let clickDiv = document.getElementById("click-zone");</strong>  <br>
+                        Je rajoute ensuite la propriété <strong>onclick</strong> (onclick fait référence au clic gauche) sur ma variable <strong>clickDiv</strong> en lui affectant la valeur <strong>addClick</strong> dont je créerai la fonction plus bas.  Ce qui donne ceci <strong>clickDiv.onclick = addClick;</strong> <br>
+                        <br>
+                        Ensuite, je crée la <strong>variable numberClick</strong> à laquelle je donne une valeur de <strong>0</strong> <br>
+                        Maintenant, je crée la fonction <strong>addClick = function()</strong> <br>
+                        Dans cette fonction, je spécifie que je veux appeler <strong>updateNumberClick</strong> avec comme argument <strong>(++NumberClick)</strong> qui lui augmentera le nombre de clics. Les <strong>++</strong> doivent cette fois se trouver avant ou celà ne fonctionnera pas<br>
+                        Ce qui donne cette ligne <strong>updateNumberClick(++numberClick);</strong> <br>
+                        <br>
+                        Je crée maintenant la <strong>fonction updateNumberClick</strong> avec l'argument <strong>(number)</strong> comme ceci <strong>function updateNumberClick(number)</strong> <br>
+                        Ensuite, je déclare la <strong>variable autoClick</strong> pour créer le clic automatique et je lui donne comme valeur la <strong>div ID click-zone</strong> en utilisant <strong>document.getElementById</strong> comme ceci <br>
+                        <strong>var autoClick = document.getElementById('click-zone');</strong> <br>
+                        Je sélectionne ensuite la <strong>div ID click-number</strong> toujours avec <strong>document.getElementById</strong> en rajoutant <strong>innerHTML</strong> qui servira à modifier le nombre de clics dans le document en lui affectant la valeur <strong>number</strong> comme ceci <br>
+                        <strong>document.getElementById("click-number").innerHTML = number;</strong> <br>
+                        Je mets ensuite la  condition <br>
+                        <strong> if (number == 15) { <br>
+                            setInterval(function(){ <br>
+                            if (numberClick <= 49) <br>
+                            autoClick.click(); <br>
+                            },200);<br> 
+                        </strong> qui dit si <strong>number</strong> est <strong>égal à 15</strong> et <strong>plus petit ou égal à 49</strong>, exécute la  <strong>fonction setInterval</strong> qui lancera un <strong>clic automatique</strong> avec un <strong>interval de 200 millisecondes</strong> qui se stoppera à 50. <br>
+                        <br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
                     </div>
             </div>
         </div>
@@ -195,9 +396,19 @@
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
+                        
+                        J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                        Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <br>
+
                         <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+
+                        
                         <div class="title-desc-tuto">Quelques explications: CSS</div><br>
                         <div class="title-desc-tuto">Quelques explications: JS</div><br>
+
+                        <br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
                     </div>
             </div>
         </div>
@@ -213,9 +424,17 @@
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
+                        
+                        J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                        Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <br>
                         <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+
                         <div class="title-desc-tuto">Quelques explications: CSS</div><br>
                         <div class="title-desc-tuto">Quelques explications: JS</div><br>
+
+                        <br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
                     </div>
             </div>
         </div>
@@ -231,9 +450,17 @@
                         </div>
                     <hr><hr>
                     <div class="expl-desc-tuto">
+                        
+                        J'ai inséré le CSS dans la balise <strong>&lt;style type="text/css"&gt;</strong> et le JavaScript dans une balise <strong>&lt;script type="text/javascript"&gt;</strong> juste ici pour mon tutoriel mais sinon, je mets le CSS dans une feuille de style reliée au HTML et le JavaScript dans une feuille de script reliée également au HTML.<br> 
+                        Le type dans les balises est là pour indiquer qu'il s'agit de <strong>texte de type css pour la balise style</strong> et de <strong>texte de type JavaScript pour la balise script</strong>. <br>
+                        <br>
                         <div class="title-desc-tuto">Quelques explications: HTML</div><br>
+
                         <div class="title-desc-tuto">Quelques explications: CSS</div><br>
                         <div class="title-desc-tuto">Quelques explications: JS</div><br>
+
+                        <br>
+                                Voilà, si une erreur se présente, bien vérifier que toutes les <strong>{ } , ( ) , " " </strong> sont bien fermés et qu'il ne manque aucun <strong>;</strong>
                     </div>
             </div>
         </div>
